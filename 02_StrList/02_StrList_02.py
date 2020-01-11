@@ -1,3 +1,3 @@
-num = ["zero","one","two","three","four","five","six","seven","eight","nine","ten"]
+num = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
 n = int(input())
-print(n," --> ",num[n])
+print(n, " --> ", num[n])
