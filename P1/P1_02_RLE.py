@@ -19,7 +19,7 @@ if op == 'str2RLE':
         print(ans)
 elif op == 'RLE2str':
     st = input().split(' ')
-    for i in range(0,len(st)-1,2):
-        print(st[i]*int(st[i+1]),end='')
+    for i in range(0, len(st), 2):
+        print(st[i] * int(st[i + 1]), end='')
 else:
     print('Error')
