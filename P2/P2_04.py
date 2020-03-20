@@ -8,20 +8,15 @@ def delivery(id, t, d, m, y):
     if m > 12:
         m = 1
         y += 1
-    date = [d, m, y]
-    deliver[id] = date
-
-
-def sort_deliver(d):
-    ans = {k: v for k, v in sorted(d.items(), key=lambda x: (x[1][2], x[1][1], x[1][0], x[0]))}
-    return ans
+    data = [y, m, d, id]
+    return data
 
 
 days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-deliver = {}
 types = ['E', 'Q', 'N', 'F']
 duration = [1, 3, 7, 14]
 errors = []
+ans = []
 while True:
     order = input().strip()
     if order == 'END':
@@ -56,9 +51,9 @@ while True:
             str(d_mon) + ' ' + str(d_year) + ' --> Invalid delivery type'
         errors.append(err)
         continue
-    delivery(d_id, d_type, d_day, d_mon, d_year)
+    ans.append(delivery(d_id, d_type, d_day, d_mon, d_year))
 for e in errors:
     print(e)
-deliver = sort_deliver(deliver)
-for k, v in deliver.items():
-    print(str(k) + ': delivered on ' + '/'.join(str(x) for x in v))
+ans.sort()
+for e in ans:
+    print(str(e[-1]) + ': delivered on ' + str(e[2]) + '/' + str(e[1]) + '/' + str(e[0]))
