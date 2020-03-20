@@ -48,15 +48,16 @@ def replace_ignorecase(s, a, b):
 
 
 def top3(votes):
-    votes = {k: v for k, v in sorted(votes.items(), key=lambda item: (-item[1], item[0]))}
-    n = 0
     ans = []
-    for k, v in votes.items():
+    for keys, value in votes.items():
+        ans.append([-value, keys])
+    ans.sort()
+    res = []
+    for n in range(len((ans))):
         if n == 3:
             break
-        ans.append(k)
-        n += 1
-    return ans
+        res.append(ans[n][1])
+    return res
 
 
 for k in range(2):
