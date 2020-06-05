@@ -18,10 +18,10 @@ class Card:
         return (self.getScore() + other.getScore()) % 10
 
     def __lt__(self, rhs):
-        value = ["3", "4", "5", "6", "7", "8",
-                 "9", "10", "J", "Q", "K", "A", "2"]
-        suit = ["club", "diamond", "heart", "spade"]
-        return (value.index(self.value), suit.index(self.suit)) < (value.index(rhs.value), suit.index(rhs.suit))
+        values = ["3", "4", "5", "6", "7", "8",
+                  "9", "10", "J", "Q", "K", "A", "2"]
+        suits = ["club", "diamond", "heart", "spade"]
+        return (values.index(self.value), suits.index(self.suit)) < (values.index(rhs.value), suits.index(rhs.suit))
 
 
 n = int(input())
