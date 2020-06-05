@@ -15,7 +15,7 @@ class Card:
             return int(self.value)
 
     def sum(self, other):
-        return (Card.getScore(self) + Card.getScore(other)) % 10
+        return (self.getScore() + other.getScore()) % 10
 
     def __lt__(self, rhs):
         value = ["3", "4", "5", "6", "7", "8",
